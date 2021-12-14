@@ -1,0 +1,27 @@
+﻿@model DataEntry.Models.DataModel
+@{
+    ViewBag.Title = "Display";
+}
+<h2>Information Display</h2>
+<fieldset>
+    <legend>data</legend>
+    <div class="display-label"> Second Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Second_Name)
+    </div>
+    <div class="display-label">Address</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+    <div class="display-label">Course</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Course)
+    </div>
+    <div class="display-label"> ID Number</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id_number)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "DataForm")
+</p>

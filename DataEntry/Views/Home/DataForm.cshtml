@@ -1,0 +1,67 @@
+﻿@model DataEntry.Models.DataModel
+@{
+    ViewBag.Title = "DataForm";
+}
+<h2>DataForm</h2>
+<div>
+    <fieldset>
+        <legend>Data  Form Information</legend>
+        @using (Html.BeginForm())
+        {
+            <div>
+                <div class="editor-label ">
+                    @Html.LabelFor(std => std.First_Name)
+                </div>
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(std => std.First_Name)
+                    @Html.ValidationMessageFor(std => std.First_Name)
+                </div>
+            </div>
+            <div>
+                <div class="editor-label ">
+                    @Html.LabelFor(std => std.Second_Name)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(std => std.Second_Name)
+                    @Html.ValidationMessageFor(std => std.Second_Name)
+                </div>
+            </div>
+            <div>
+                <div class="editor-label ">
+                    @Html.LabelFor(std => std.Address)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(std => std.Address)
+                    @Html.ValidationMessageFor(std => std.Address)
+                </div>
+            </div>
+            <div>
+                <div class="editor-label ">
+                    @Html.LabelFor(std => std.Course)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(std => std.Course, new[] {
+                                new SelectListItem(){Text = "Course 1" , Value=bool.TrueString},
+                                new SelectListItem(){Text ="Course 2" , Value = bool.FalseString},
+                            }, "Select Your Course")
+                    @Html.ValidationMessageFor(std => std.Course)
+                </div>
+            </div>
+            <div>
+                <div class="editor-label ">
+                    @Html.LabelFor(std => std.Id_number)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(std => std.Id_number)
+                    @Html.ValidationMessageFor(std => std.Id_number)
+                </div>
+            </div>
+            <p><input type="submit" value="Submit Details" /></p>
+
+ 
+        }
+    </fieldset>
+</div>
+
+
